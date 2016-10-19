@@ -44,6 +44,7 @@ public class MyActivity extends Activity {
         textView.setText(String.format("Hello, %1$s!", name));
     }
 
+    // added by MP
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
