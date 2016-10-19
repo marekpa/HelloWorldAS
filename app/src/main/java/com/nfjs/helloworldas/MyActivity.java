@@ -33,11 +33,21 @@ public class MyActivity extends Activity {
                 sayHello(v);
             }
         });
+
+        if (savedInstanceState != null) {
+            textView.setText(savedInstanceState.getString("greeting"));
+        }
     }
 
     public void sayHello(View view) {
         String name = editText.getText().toString();
         textView.setText(String.format("Hello, %1$s!", name));
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("greeting", textView.getText().toString());
     }
 
     @Override
